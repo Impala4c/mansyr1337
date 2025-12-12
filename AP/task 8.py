@@ -7,3 +7,4 @@ while num > 0:
         print(w[init])
     init += 1
     num-=1
+    
