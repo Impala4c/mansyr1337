@@ -1,27 +1,27 @@
 task3 = input("Enter the equation: ")
-n1 = task3[0]
-o1 = task3[1]
-n2 = task3[2]
-n3 = task3[4]
+x = task3[0]
+operation = task3[1]
+num1 = task3[2]
+num2 = task3[4]
 
-if n1 == "x":
-    n3 = int(n3)
-    n2 = int(n2)
-    if o1 == "-":
-        print(n3+n2)
+if x == "x":
+    num2 = int(num2)
+    num1 = int(num1)
+    if operation == "-":
+        print(num2+num1)
     else:
-        print(n3-n2)
-elif n2 == "x":
-    n3 = int(n3)
-    n1 = int(n1)
-    if o1 == "-":
-        print(n1-n3)
+        print(num2-num1)
+elif num1 == "x":
+    num2 = int(num2)
+    x = int(x)
+    if operation == "-":
+        print(x-num2)
     else:
-        print(n3-n1)
-elif n3 == "x":
-    n2 = int(n2)
-    n1 = int(n1)
-    if n3 =="-":
-        print(n1-n2)
+        print(num2-x)
+elif num2 == "x":
+    num1 = int(num1)
+    x = int(x)
+    if num2 =="-":
+        print(x-num1)
     else:
-        print(n1+n2)
+        print(x+num1)
