@@ -1,3 +1,28 @@
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+
+    return merge(left, right)
+def merge(left, right):
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i][1] > right[j][1]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+
 items = input().split()
 counter = {}
 for i in items:
@@ -18,12 +43,8 @@ print("Purchased Once:")
 for i in counter:
     if counter[i]== 1:
         print(i)
+freq_list = list(counter.items())
 print("Sorted by frequency:")
-m_count2= 0
-for i in counter:
-    if counter[i]>m_count2:
-        m_count2 = counter[i]
-for i in range(m_count2,0,-1):
-    for j in counter:
-        if counter[j]== i:
-            print(j,counter[j])
+sorted_items = merge_sort(freq_list)
+for item, count in sorted_items:
+    print(item, count)
