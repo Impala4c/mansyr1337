@@ -6,3 +6,4 @@ squ = a * a
 z = int(input("Base of right triangle:"))
 y = int(input("Height of right triangle"))
 tri = 0.5*y*z
+print (tri,squ,cir)
